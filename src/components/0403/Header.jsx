@@ -15,11 +15,10 @@ export default function Header() {
           <li>
             <Link to="/">홈으로 이동</Link>
           </li>
+          <li>{/* <Link to="/profile">프로필 페이지 이동</Link> */}</li>
+          <li>{/* <Link to="/board">게시판 페이지 이동</Link> */}</li>
           <li>
-            <Link to="/profile">프로필 페이지 이동</Link>
-          </li>
-          <li>
-            <Link to="/board">게시판 페이지 이동</Link>
+            <Link to="/todo">Todo 페이지 이동</Link>
           </li>
         </ul>
       </nav>
