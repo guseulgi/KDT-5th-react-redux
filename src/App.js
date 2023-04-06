@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import GlobalStyle from './components/0405/GlobalStyle';
 import { useSelector } from 'react-redux';
 import Mbti from './pages/Mbti';
+import Show from './pages/Show';
 // import logo from './logo.svg';
 // import './App.css';
 // import Nav from './components/0403/Nav';
@@ -27,11 +28,14 @@ const Main = styled.main`
 
 function App() {
   const page = useSelector((state) => state.mbti.page);
+  const survey = useSelector((state) => state.mbti.survey);
 
   return (
     <>
       <GlobalStyle />
-      <Main>{page === 0 ? <Start /> : <Mbti />}</Main>
+      <Main>
+        {page === 0 ? <Start /> : page > survey.length ? <Show /> : <Mbti />}
+      </Main>
     </>
   );
 }
